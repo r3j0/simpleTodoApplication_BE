@@ -1,8 +1,10 @@
 ### Environment
 - **IDE** : IntelliJ IDEA Community Edition 2025.2.2
-- **Gradle JVM** : 
+- **JDK** : Microsoft OpenJDK 17.0.16
+- **Gradle JVM** : 8.14
 - **Spring Boot** : Spring Boot 3.2.9 (Gradle)
 - **Deploy** : CloudType Free Tier
+- **MariaDB** : 11.2.6-MariaDB-ubu2204
 
 ### How to Install
 
