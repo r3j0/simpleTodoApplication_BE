@@ -8,10 +8,15 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Test {
-
+public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    private boolean isCompleted;
+    private String startDate;
+    private String endDate;
+    private String description;
+    private String tags;
 }
+
