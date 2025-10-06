@@ -28,13 +28,12 @@ public class TodoService {
         Todo todo = todoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Todo not found"));
 
-        if (request.getTitle() != null) {
-            todo.setTitle(request.getTitle());
-        }
-
-        if (request.getIsCompleted() != null) {
-            todo.setCompleted(request.getIsCompleted());
-        }
+        if (request.getTitle() != null) todo.setTitle(request.getTitle());
+        if (request.getIsCompleted() != null) todo.setCompleted(request.getIsCompleted());
+        if (request.getStartDate() != null) todo.setStartDate(request.getStartDate());
+        if (request.getEndDate() != null) todo.setEndDate(request.getEndDate());
+        if (request.getDescription() != null) todo.setDescription(request.getDescription());
+        if (request.getTags() != null) todo.setTags(request.getTags());
 
         return todoRepository.save(todo);
     }
