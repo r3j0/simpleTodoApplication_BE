@@ -11,9 +11,17 @@ public class WebConfig implements WebMvcConfigurer {
         // 모든 요청에 대해 CORS 허용
         registry.addMapping("/**")
                 .allowedOrigins("${WEB_URL}")
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")  // 허용할 HTTP 메서드
-                .allowedHeaders("*")  // 모든 헤더 허용
-                .allowCredentials(true) // 쿠키나 인증정보 허용 여부
-                .maxAge(3600);  // CORS 응답 캐시 시간 (초 단위)
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
+                .allowedHeaders(
+                        "Content-Type",     // JSON 데이터
+                        "Authorization",    // JWT 또는 인증 토큰
+                        "Accept",           // 응답 타입
+                        "X-Requested-With", // Ajax
+                        "Origin",           // CORS
+                        "Access-Control-Allow-Headers",  // CORS
+                        "Access-Control-Allow-Origin"   // CORS
+                )
+                .allowCredentials(true)
+                .maxAge(3600);
     }
 }
